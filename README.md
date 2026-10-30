@@ -1,6 +1,6 @@
 # R Book Lib - atividade de Qualidade de Software
 
-**Integrantes:** João Henrique e José Gouveia.
+**Integrantes:** João Henrique, José Gouveia e Luiz Cláudio.
 
 Sistema de biblioteca em console, com armazenamento em memória. A atividade foi desenvolvida a partir dos cinco documentos, na ordem de 0 a 4. Inclui as regras RN01 a RN08 e as duas evoluções exigidas: **NF02 / HU11 (datas)** e **NF01 / HU10 (busca)**.
 
@@ -95,6 +95,6 @@ Os testes acessam as regras pelo `LibraryService`, sem importar a interface. Cad
 
 ## Entrega
 
-O arquivo `entrega/r-book-lib-joao-henrique-jose-gouveia.zip` contém código, testes, relatório, documentação, evidências e os PDFs de referência. Não inclui `node_modules`, cache, arquivos temporários ou a pasta regenerável de cobertura. Após extrair, execute `npm install` e `npm test` dentro de `r-book-lib/`.
+O arquivo `entrega/r-book-lib-joao-henrique-jose-gouveia-luiz-claudio.zip` contém código, testes, relatório, documentação, evidências e os PDFs de referência. Não inclui `node_modules`, cache, arquivos temporários ou a pasta regenerável de cobertura. Após extrair, execute `npm install` e `npm test` dentro de `r-book-lib/`.
 
 O pacote foi conferido em uma pasta independente, com nova instalação das dependências e os 90 testes aprovados.

@@ -6,6 +6,7 @@
 
 1. João Henrique
 2. José Gouveia
+3. Luiz Cláudio
 
 **Evoluções implementadas:** NF02 / HU11 (datas de empréstimo e devolução) e NF01 / HU10 (busca por título parcial ou autor).
 
