@@ -1,0 +1,14 @@
+
+> r-book-lib@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js
+
+(node:17716) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:892) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Test Suites: 2 passed, 2 total
+Tests:       90 passed, 90 total
+Snapshots:   0 total
+Time:        1.907 s
+Ran all test suites.

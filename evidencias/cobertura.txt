@@ -1,0 +1,26 @@
+
+> r-book-lib@1.0.0 coverage
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage
+
+(node:336) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14288) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+--------------------------|---------|----------|---------|---------|-------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------------|---------|----------|---------|---------|-------------------
+All files                 |     100 |    98.48 |     100 |     100 |                   
+ models                   |     100 |    94.11 |     100 |     100 |                   
+  book.js                 |     100 |     92.3 |     100 |     100 | 3                 
+  user.js                 |     100 |      100 |     100 |     100 |                   
+ repo                     |     100 |      100 |     100 |     100 |                   
+  in-memory-repository.js |     100 |      100 |     100 |     100 |                   
+ services                 |     100 |      100 |     100 |     100 |                   
+  library-service.js      |     100 |      100 |     100 |     100 |                   
+--------------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 2 passed, 2 total
+Tests:       90 passed, 90 total
+Snapshots:   0 total
+Time:        2.729 s
+Ran all test suites.

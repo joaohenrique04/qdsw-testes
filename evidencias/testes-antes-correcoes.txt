@@ -1,0 +1,123 @@
+
+> r-book-lib@1.0.0 test
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand --runTestsByPath tests/library-service.test.js
+
+(node:5764) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+FAIL tests/library-service.test.js
+  ● Parte 1 - regras do LibraryService › RN01 - cadastro único e título obrigatório › rejeita título inválido undefined com acervo preenchido
+
+    expect(received).toThrow(expected)
+
+    Expected message: "Título inválido"
+    Received message: "Cannot read properties of undefined (reading 'toLowerCase')"
+
+          12 |   }
+          13 |
+        > 14 |   findBook(title) {
+             |                    ^
+          15 |     return this.books.find(b => b.title.toLowerCase() === title.toLowerCase());
+          16 |   }
+          17 |
+
+      at src/repo/in-memory-repository.js:14:65
+                at Array.find (<anonymous>)
+      at InMemoryRepository.findBook (src/repo/in-memory-repository.js:14:23)
+      at LibraryService.registerBook (src/services/library-service.js:11:19)
+      at tests/library-service.test.js:56:28
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/library-service.test.js:56:61
+      at tests/library-service.test.js:56:61
+
+  ● Parte 1 - regras do LibraryService › RN01 - cadastro único e título obrigatório › rejeita título inválido null com acervo preenchido
+
+    expect(received).toThrow(expected)
+
+    Expected message: "Título inválido"
+    Received message: "Cannot read properties of null (reading 'toLowerCase')"
+
+          12 |   }
+          13 |
+        > 14 |   findBook(title) {
+             |                    ^
+          15 |     return this.books.find(b => b.title.toLowerCase() === title.toLowerCase());
+          16 |   }
+          17 |
+
+      at src/repo/in-memory-repository.js:14:65
+                at Array.find (<anonymous>)
+      at InMemoryRepository.findBook (src/repo/in-memory-repository.js:14:23)
+      at LibraryService.registerBook (src/services/library-service.js:11:19)
+      at tests/library-service.test.js:56:28
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/library-service.test.js:56:61
+      at tests/library-service.test.js:56:61
+
+  ● Parte 1 - regras do LibraryService › RN01 - cadastro único e título obrigatório › rejeita título inválido 42 com acervo preenchido
+
+    expect(received).toThrow(expected)
+
+    Expected message: "Título inválido"
+    Received message: "title.toLowerCase is not a function"
+
+          12 |   }
+          13 |
+        > 14 |   findBook(title) {
+             |                    ^
+          15 |     return this.books.find(b => b.title.toLowerCase() === title.toLowerCase());
+          16 |   }
+          17 |
+
+      at src/repo/in-memory-repository.js:14:65
+                at Array.find (<anonymous>)
+      at InMemoryRepository.findBook (src/repo/in-memory-repository.js:14:23)
+      at LibraryService.registerBook (src/services/library-service.js:11:19)
+      at tests/library-service.test.js:56:28
+      at Object.<anonymous> (node_modules/expect/build/index.js:1824:9)
+      at Object.throwingMatcher [as toThrow] (node_modules/expect/build/index.js:2235:93)
+      at tests/library-service.test.js:56:61
+      at tests/library-service.test.js:56:61
+
+  ● Parte 1 - regras do LibraryService › RN02 - limites de exemplares › rejeita seis exemplares, primeiro inteiro acima do máximo
+
+    expect(received).toThrow(expected)
+
+    Expected message: "Quantidade máxima é 5 exemplares"
+
+    Received function did not throw
+
+      86 |       expect(service.listLoans("u1")).toEqual([]);
+      87 |     });
+    > 88 |     test("recusa devolução que ultrapassaria o total original mesmo abaixo de cinco", () => {
+         |                                                                           ^
+      89 |       const book = prepareLoan(2);
+      90 |       // Estado inconsistente intencional para exercitar a guarda defensiva da RN02.
+      91 |       book.quantity = 2;
+
+      at Object.<anonymous> (tests/library-service.test.js:88:75)
+
+  ● Parte 1 - regras do LibraryService › RN02 - limites de exemplares › recusa devolução que ultrapassaria o total original mesmo abaixo de cinco
+
+    expect(received).toThrow(expected)
+
+    Expected message: "Quantidade máxima atingida"
+
+    Received function did not throw
+
+       99 |       expect(() => service.returnBook("u1", "Dom Casmurro")).toThrow(new Error("Quantidade máxima atingida"));
+      100 |       expect(book.quantity).toBe(5);
+    > 101 |       expect(service.listLoans("u1")).toEqual(["Dom Casmurro"]);
+          |                                                              ^
+      102 |     });
+      103 |   });
+      104 |
+
+      at Object.<anonymous> (tests/library-service.test.js:101:62)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 52 passed, 57 total
+Snapshots:   0 total
+Time:        1.218 s
+Ran all test suites within paths "tests/library-service.test.js".
